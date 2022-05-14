@@ -1,11 +1,11 @@
 // Function creates 16x16 grid.
 function makeGrid() {
-    for (let rows = 0; rows <= 16; rows++) {
-        for (let columns = 0; columns <= 16; columns++)
-            $('.container').append("<div class='square'></div>")
+    for (let i = 0; i <= 16; i++) {
+        for (let j = 0; j <= 16; j++)
+            $("#container").append("<div class='grid'></div>")
     }
-    $('.grid').width(480/x);
-    $('.grid').height(480/x);
+    $('.grid').width(480/16);
+    $('.grid').height(480/16);
 
 
 }

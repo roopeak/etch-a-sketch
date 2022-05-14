@@ -1,17 +1,11 @@
-.container {
+#container {
     display: grid;
-    grid-template-columns: auto auto auto;
     height: 480px;
     width: 480px;
     border: 1px solid black;
 }
 
-.square {
-    height: 30px;
-    width: 30px;
-
-
-
-    border: 1px solid black;
+.grid {
+    outline: 1px solid black;
+    display: inline-block;
 }
-
