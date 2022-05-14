@@ -1,11 +1,9 @@
-// Function creates 16x16 grid.
-function makeGrid() {
-    for (let i = 0; i <= 16; i++) {
-        for (let j = 0; j <= 16; j++)
-            $("#container").append("<div class='grid'></div>")
-    }
-    $('.grid').width(480/16);
-    $('.grid').height(480/16);
+let board = document.querySelector(".board");
+board.style.gridTemplateColumns = "repeat(16 , 1fr)";
+board.style.gridTemplateRows = "repeat(16 , 1fr)";
 
-
+for (let i = 0; i < 256; i++) {
+    let square = document.createElement("div");
+    square.style.backgroundColor = 'blue';
+    board.insertAdjacentElement("beforeend", square);
 }

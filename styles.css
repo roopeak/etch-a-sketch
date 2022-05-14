@@ -1,11 +1,7 @@
-#container {
+.board {
     display: grid;
     height: 480px;
     width: 480px;
-    border: 1px solid black;
-}
-
-.grid {
-    outline: 1px solid black;
-    display: inline-block;
+    background-color: blue;
+   /* border: 1px solid black; */
 }
