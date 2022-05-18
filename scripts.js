@@ -10,25 +10,24 @@ function gridSize() {
 
 
 // Creates the grid according to user input
-function makeGrid(size) {
-    // let size = prompt("Enter grid size: ");
-    
+function makeGrid(size) {    
     let grid = document.querySelector('.grid');
     let squares = grid.querySelectorAll('div');
     squares.forEach((div) => div.remove());
     grid.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-let amount = size * size;
-for (i = 0; i < amount; i++) {
-    let square = document.createElement('div');
-    square.classList.add('cell');
-    grid.insertAdjacentElement('beforeend', square); 
-    square.addEventListener('mouseover', (event) => {
+    let amount = size * size;
+    for (i = 0; i < amount; i++) {
+        let square = document.createElement('div');
+        square.classList.add('cell');
+        grid.insertAdjacentElement('beforeend', square); 
+        square.addEventListener('mouseover', (event) => {
         event.target.style.backgroundColor = 'black';
-    });
-  }
+        });
+    }
 }
+
 
 gridSize();
 makeGrid();
