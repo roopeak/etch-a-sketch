@@ -1,17 +1,34 @@
+// Defines the size of the grid
+function gridSize() {
+    const btn = document.querySelector('.size');
+    btn.addEventListener('click', () => {
+        const input = prompt("Give a grid size between 2 and 100: ");
+        makeGrid(input);
+    });
+  
+}
+
+
 // Creates the grid according to user input
 function makeGrid(size) {
-    let grid = document.querySelector(".grid");
+    // let size = prompt("Enter grid size: ");
+    
+    let grid = document.querySelector('.grid');
+    let squares = grid.querySelectorAll('div');
+    squares.forEach((div) => div.remove());
     grid.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-for (i = 0; i < 256; i++) {
+let amount = size * size;
+for (i = 0; i < amount; i++) {
     let square = document.createElement('div');
     square.classList.add('cell');
-    grid.insertAdjacentElement("beforeend", square); 
+    grid.insertAdjacentElement('beforeend', square); 
     square.addEventListener('mouseover', (event) => {
         event.target.style.backgroundColor = 'black';
     });
   }
 }
 
-makeGrid(16);
+gridSize();
+makeGrid();

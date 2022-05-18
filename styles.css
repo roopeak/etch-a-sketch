@@ -20,17 +20,19 @@
 .buttons {
     display: flex;
     justify-content: center;
-    padding-top: 2%;
+    padding-top: 1%;
 }
 
-.gridSize {
+.grid-button {
     display: flex;
     justify-content: center;
-    padding-top: 2%;
 }
 
-#black, 
-#random,
-#reset {
-    margin: 1%;
+.black, 
+.random,
+.reset,
+.small,
+.med,
+.large {
+    margin: 0.5%;
 }
