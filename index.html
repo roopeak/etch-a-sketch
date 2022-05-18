@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="scripts.js"></script>
-    <div id="container">
-        <div class="board"></div>
+    <div class="title"><h1>Etch a Sketch</h1></div>
+    <div class="flex-container">
+        <div class="content">
+            <div class="grid"></div>
+        </div>
+
+    </div>
+    <div class="buttons">
+        <button id="black">Black</button>
+        <button id="random">Random</button>
+        <button id="reset">Reset</button>
+    </div>
+    <div class="gridSize">
+    <input type="text" placeholder="Size of Board" value="16" />
+    <button>Set Size</button>
     </div>
 </body>
+<script src="scripts.js"></script>
 </html>

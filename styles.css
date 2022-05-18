@@ -1,18 +1,35 @@
-/* .board {
-    display: grid;
-    height: 480px;
-    width: 480px;
-    border: 1px solid black;
+.title, .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
 }
 
 .grid {
-    display: inline-block;
-} */
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 1px solid black;
+}
 
 .cell {
     border: 1px solid black;
-    min-width: 20px;
-    min-height: 20px;
-    display: inline-block;
-    margin-right: 2px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.gridSize {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+#black, 
+#random,
+#reset {
+    margin: 1%;
 }
