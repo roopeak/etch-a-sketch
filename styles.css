@@ -1,7 +1,18 @@
-.board {
+/* .board {
     display: grid;
     height: 480px;
     width: 480px;
-    background-color: blue;
-   /* border: 1px solid black; */
+    border: 1px solid black;
+}
+
+.grid {
+    display: inline-block;
+} */
+
+.cell {
+    border: 1px solid black;
+    min-width: 20px;
+    min-height: 20px;
+    display: inline-block;
+    margin-right: 2px;
 }
