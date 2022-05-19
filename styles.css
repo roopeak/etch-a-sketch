@@ -17,22 +17,8 @@
     border: 1px solid black;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    padding-top: 1%;
-}
-
 .grid-button {
     display: flex;
     justify-content: center;
-}
-
-.black, 
-.random,
-.reset,
-.small,
-.med,
-.large {
-    margin: 0.5%;
+    padding: 2%;
 }

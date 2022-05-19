@@ -3,7 +3,9 @@ function gridSize() {
     const btn = document.querySelector('.size');
     btn.addEventListener('click', () => {
         const input = prompt("Give a grid size between 2 and 100: ");
-        makeGrid(input);
+        if (input > 100 || input < 2)
+            alert("Grid is out of range.")
+        else makeGrid(input);
     });
   
 }
