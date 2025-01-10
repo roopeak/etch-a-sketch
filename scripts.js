@@ -1,6 +1,9 @@
+let rainbowEnabled = false;
+
 const gridContainer = document.querySelector('.grid-container');
 const sizeBtn = document.querySelector('.size-btn');
 const resetBtn = document.querySelector('.reset-btn');
+const rainbowBtn = document.querySelector('.rainbow-btn');
 
 function generateGrid(size) {
 	resetGrid();
@@ -13,11 +16,14 @@ function generateGrid(size) {
 	for (let i = 0; i < size * size; i++) {
 		const gridItem = document.createElement("div");
 		gridItem.classList.add("grid-item");
-		gridItem.style.border = "1px solid black";
 		gridContainer.appendChild(gridItem);
 
 		gridItem.addEventListener("mouseover", () => {
+			if (rainbowEnabled === true) {
+				gridItem.style.backgroundColor = getRandomRgb();
+			} else {
 				gridItem.style.backgroundColor = "black";
+			}
 		});
 	}
 }
@@ -39,6 +45,22 @@ function resetGrid() {
 	gridContainer.innerHTML = '';
 }
 
+function toggleRainbow() {
+	if (rainbowEnabled === false) {
+		rainbowEnabled = true;
+	} else {
+		rainbowEnabled = false;
+	}
+}
+
+function getRandomRgb() {
+  var num = Math.round(0xffffff * Math.random());
+  var r = num >> 16;
+  var g = num >> 8 & 255;
+  var b = num & 255;
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
 sizeBtn.addEventListener('click', () => {
 	const gridSize = askInput();
 	generateGrid(gridSize);
@@ -46,4 +68,8 @@ sizeBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
 	resetGrid();
+})
+
+rainbowBtn.addEventListener('click', () => {
+	toggleRainbow();
 })
