@@ -1,9 +1,9 @@
 const gridContainer = document.querySelector('.grid-container');
 const sizeBtn = document.querySelector('.size-btn');
+const resetBtn = document.querySelector('.reset-btn');
 
 function generateGrid(size) {
-	console.log(size);
-	gridContainer.innerHTML = "";
+	resetGrid();
 	gridContainer.style.display = "grid";
 	gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 	gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -35,7 +35,15 @@ function askInput() {
 	}
 }
 
+function resetGrid() {
+	gridContainer.innerHTML = '';
+}
+
 sizeBtn.addEventListener('click', () => {
 	const gridSize = askInput();
 	generateGrid(gridSize);
+})
+
+resetBtn.addEventListener('click', () => {
+	resetGrid();
 })
