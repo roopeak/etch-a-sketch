@@ -12,4 +12,21 @@ body {
 	width: 600px;
 	height: 600px;
   border: 1px solid black;
+	margin-bottom: 2em;
+}
+
+.buttons-div {
+	display: flex;
+	justify-content: space-evenly;
+	width: 600px;
+}
+
+.buttons-div > button {
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+	width: 9em;
+	height: 4em;
+	border-radius: 10px;
+	cursor: pointer;
 }

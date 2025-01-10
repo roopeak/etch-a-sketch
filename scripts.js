@@ -1,4 +1,5 @@
 let rainbowEnabled = false;
+let gridSize = 16;
 
 const gridContainer = document.querySelector('.grid-container');
 const sizeBtn = document.querySelector('.size-btn');
@@ -6,7 +7,7 @@ const resetBtn = document.querySelector('.reset-btn');
 const rainbowBtn = document.querySelector('.rainbow-btn');
 
 function generateGrid(size) {
-	resetGrid();
+	gridContainer.innerHTML = '';
 	gridContainer.style.display = "grid";
 	gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 	gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -30,19 +31,15 @@ function generateGrid(size) {
 
 function askInput() {
 	while (true) {
-		let input = prompt("Type the size of the grid (1-100):");
-		input = Number(input);
+		gridSize = prompt("Type the size of the grid (1-100):");
+		gridSize = Number(gridSize);
 
-		if (!isNaN(input) && input >= 1 && input <= 100) {
-			return input;
+		if (!isNaN(gridSize) && gridSize >= 1 && gridSize <= 100) {
+			return gridSize;
 		} else {
 			alert('Grid size must be between 1 and 100!');
 		}
 	}
-}
-
-function resetGrid() {
-	gridContainer.innerHTML = '';
 }
 
 function toggleRainbow() {
@@ -66,10 +63,49 @@ sizeBtn.addEventListener('click', () => {
 	generateGrid(gridSize);
 })
 
+sizeBtn.addEventListener('mouseover', () => {
+	sizeBtn.style.backgroundColor = 'white';
+	sizeBtn.style.color = 'black';
+})
+
+sizeBtn.addEventListener('mouseout', () => {
+	sizeBtn.style.backgroundColor = 'black';
+	sizeBtn.style.color = 'white';
+})
+
 resetBtn.addEventListener('click', () => {
-	resetGrid();
+	generateGrid(gridSize);
+})
+
+resetBtn.addEventListener('mouseover', () => {
+	resetBtn.style.backgroundColor = 'white';
+	resetBtn.style.color = 'black';
+})
+
+resetBtn.addEventListener('mouseout', () => {
+	resetBtn.style.backgroundColor = 'black';
+	resetBtn.style.color = 'white';
 })
 
 rainbowBtn.addEventListener('click', () => {
 	toggleRainbow();
+	if (rainbowBtn.textContent === 'Enable rainbow') {
+		rainbowBtn.textContent = 'Disable rainbow'
+		rainbowBtn.style.backgroundColor = 'white'
+		rainbowBtn.style.color = 'black';
+	} else {
+		rainbowBtn.textContent = 'Enable rainbow'
+	}
 })
+
+rainbowBtn.addEventListener('mouseover', () => {
+	rainbowBtn.style.backgroundColor = 'white';
+	rainbowBtn.style.color = 'black';
+})
+
+rainbowBtn.addEventListener('mouseout', () => {
+	rainbowBtn.style.backgroundColor = 'black';
+	rainbowBtn.style.color = 'white';
+})
+
+generateGrid(gridSize);
